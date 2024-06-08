@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block catalog %}
+<main>
+    <div class="container">
+        <div class="col-md-7 col-lg-8">
+            <form action="{{ url_for('product_order', pk=id ) }}" method="post">
+                <p>Виберіть країну та місто</p>
+                {{ form.csrf_token }}
+                {{ form.country(**{"hx-get": "/get-cities", "hx-target": "#city"}) }}
+                {{ form.city }}
+
+                <div class="mb-3">
+                    <p>Введіть адресу</p>
+                    {{ form.address }}
+                </div>
+                <div class="mb-3">
+                    <p>Введіть кількість товару для замовлення</p>
+                    {{ form.amount }}
+                </div>
+                <a href="/" class="btn btn-secondary">Відмінити</a>
+                <button type="submit" class="btn btn-primary">Замовити</button>
+            </form>
+        </div>
+    </div>
+</main>
+{% endblock %}

@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block catalog %}
+<main>
+    <div class="container">
+        <div class="col-md-7 col-lg-8">
+            <form action="{{ url_for('edit_product', pk=product.id ) }}" method="post" enctype="multipart/form-data">
+              <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Введіть назву продукту:</label>
+                <input value="{{ product.name }}" name="product_name" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="TextHelp">
+              </div>
+                <div class="col-sm-6">
+                    <label for="firstName" class="form-label">Ціна:</label>
+                    <input value="{{ product.price }} "name="price" type="text" class="form-control" id="firstName" placeholder="" value="" required>
+                </div>
+
+            <div class="col-sm-6">
+              <label for="lastName" class="form-label">Вага</label>
+              <input value="{{ product.weight }}" name="weight" type="text" class="form-control" id="lastName" placeholder="" value="" required>
+              <div class="invalid-feedback">
+                Valid last name is required.
+              </div>
+            </div>
+
+                <div class="col-md-5">
+              <label for="country" class="form-label">Колір</label>
+              <select name="color" class="form-select" id="country" required>
+                <option value="blue" {% if product.color == 'blue' %}selected{% endif %}>Синій</option>
+                <option value="green" {% if product.color == 'green' %}selected{% endif %}>Зелений</option>
+                <option value="yellow" {% if product.color == 'yellow' %}selected{% endif %}>Жовтий</option>
+                <option value="red" {% if product.color == 'red' %}selected{% endif %}>Червоний</option>
+                <option value="black" {% if product.color == 'black' %}selected{% endif %}>Чорний</option>
+                <option value="white" {% if product.color == 'white' %}selected{% endif %}>Білий</option>
+                <option value="pink" {% if product.color == 'pink' %}selected{% endif %}>Рожевий</option>
+                <option value="purple" {% if product.color == 'purple' %}selected{% endif %}>Фіолетовий</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label for="formFile" class="form-label">Default file input example</label>
+              <input name="photo" class="form-control" type="file" id="formFile">
+            </div>
+
+                <a href="{{ url_for('product_deleting', pk=product.id) }}" class="btn btn-danger">Видалити</a>
+                <a href="/" class="btn btn-secondary">Відмінити</a>
+                <button type="submit" class="btn btn-primary">Примінити зміни</button>
+            </form>
+        </div>
+    </div>
+</main>
+{% endblock %}
