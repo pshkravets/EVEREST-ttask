@@ -1,5 +1,3 @@
-CREATE DATABASE  IF NOT EXISTS `task` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
-USE `task`;
 -- MySQL dump 10.13  Distrib 8.0.36, for Win64 (x86_64)
 --
 -- Host: localhost    Database: task
@@ -133,7 +131,7 @@ CREATE TABLE `gods` (
   `price` float DEFAULT NULL,
   `photo` varchar(200) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -142,7 +140,7 @@ CREATE TABLE `gods` (
 
 LOCK TABLES `gods` WRITE;
 /*!40000 ALTER TABLE `gods` DISABLE KEYS */;
-INSERT INTO `gods` VALUES (2,'iphone','black',0.2,50000,'завантаження.jpg'),(4,'samsung ','black',0.1,20000,'samsung.jpg');
+INSERT INTO `gods` VALUES (4,'samsung ','black',0.1,20000,'samsung.jpg'),(5,'Iphone','black',0.2,50000,'iphone.jpg'),(6,'Xiaomy ','blue',0.3,15000,'xiaomi.jpg'),(7,'Tank3310:)','blue',0.5,300,'N3310.jpg');
 /*!40000 ALTER TABLE `gods` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -173,7 +171,7 @@ CREATE TABLE `order` (
 
 LOCK TABLES `order` WRITE;
 /*!40000 ALTER TABLE `order` DISABLE KEYS */;
-INSERT INTO `order` VALUES (1,2,'Delivered',2,1),(2,4,'В обробці',4,2),(3,65,'Delivering',4,3),(4,2,'Delivering',4,4),(5,2,'Delivering',2,5),(6,2,'Delivering',4,6),(7,44,'Delivering',4,7),(8,123,'Delivering',2,8),(9,123,'Delivering',2,8),(10,123,'Delivering',2,10),(11,312,'Delivering',2,11),(12,123,'Delivering',2,12),(13,444,'Delivering',4,11),(14,444,'Delivering',4,14),(15,12,'Delivering',2,15);
+INSERT INTO `order` VALUES (1,2,'Delivered',NULL,1),(2,4,'В обробці',4,2),(3,65,'Delivering',4,3),(4,2,'Delivering',4,4),(5,2,'Delivering',NULL,5),(6,2,'Delivering',4,6),(7,44,'Delivering',4,7),(8,123,'Delivering',NULL,8),(9,123,'Delivering',NULL,8),(10,123,'Delivering',NULL,10),(11,312,'Delivering',NULL,11),(12,123,'Delivering',NULL,12),(13,444,'Delivering',4,11),(14,444,'Delivering',4,14),(15,12,'Delivering',NULL,15);
 /*!40000 ALTER TABLE `order` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -211,4 +209,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-06-06 18:24:49
+-- Dump completed on 2024-06-08 22:25:34
